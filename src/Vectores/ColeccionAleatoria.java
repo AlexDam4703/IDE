@@ -20,7 +20,9 @@ public class ColeccionAleatoria {
 		
 		System.out.println("El valor de la desviacion tipica es de: "+ DesviacionTipica(vector1));
 		int minimoMaximo [] = valorMaximoMinimo(vector1);
-		System.out.printf("El valor mas pequeño es: %d y el valor mas grande es: %d",minimoMaximo[0],minimoMaximo[1]);
+		System.out.printf("El valor mas pequeño es: %d y el valor mas grande es: %d%n",minimoMaximo[0],minimoMaximo[1]);
+		System.out.printf("El vector con los pares quedaria asi:%n");
+		System.out.println(Arrays.toString(vectorPares(vector1)));
 		
 }
 	public static double valorMedio (int vector1 []) {
@@ -37,15 +39,19 @@ public class ColeccionAleatoria {
 	  Arrays.sort(vector1);
 	  System.out.println(Arrays.toString(vector1));
 	}
-	public static int [] vecotorPares (int vector1 []) {
+	public static int [] vectorPares (int vector1 []) {
 		ArrayList listaPares = new ArrayList(); 
 		for (int i =0; i <100; i++) {
 			if (vector1[i]%2==0) {
 			listaPares.add(vector1[i]);
 			}
 		}
+		int vectorPares [] = new int [listaPares.size()];
+		for (int k=0; k < listaPares.size(); k++) {
+			vectorPares[k] = (int) listaPares.get(k);
+		}
 		
-		int vectorPares [] = new int [100];
+		
 		return vectorPares;
 	}
 	public static double DesviacionTipica (int vector1 []) {
